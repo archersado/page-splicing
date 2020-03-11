@@ -1,7 +1,7 @@
 export default class DutyChain {
   next: any;
   fn: Function;
-  constructor(fn) { 
+  constructor(fn) {
     this.fn = fn;
   }
 
@@ -9,10 +9,10 @@ export default class DutyChain {
     const next = async (...args) => {
       if (!this.next || !this.next.handleRequest) return;
 
-      const result = await this.next.handleRequest(...args)
+      const result = await this.next.handleRequest(...args);
       console.log(result);
       return result;
-    }
+    };
     return await this.fn(...outer, next);
   }
 

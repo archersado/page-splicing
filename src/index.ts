@@ -24,7 +24,7 @@ class PageSplicing {
         return async (offset, pageSize, next) => {
           return await pagingLogic(getData, getCount, offset, pageSize, next)
         }
-      }
+      },
     }
   }
 

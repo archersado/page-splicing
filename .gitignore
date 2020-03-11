@@ -2,6 +2,7 @@ app/**/*.js
 test/**/*.js
 config/**/*.js
 *.map
+lib/
 /node_modules
 coverage/
 *.log
