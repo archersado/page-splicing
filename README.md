@@ -7,8 +7,6 @@ Using Duty Chain to make it easy for extension.
 
 ## Install
 
-```
-
 ```bash
 $ npm install page-splicing
 ```
