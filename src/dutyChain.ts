@@ -10,7 +10,6 @@ export default class DutyChain {
       if (!this.next || !this.next.handleRequest) return;
 
       const result = await this.next.handleRequest(...args);
-      console.log(result);
       return result;
     };
     return await this.fn(...outer, next);
