@@ -24,20 +24,24 @@ import rp from 'rp'
 
 const getData = async function (currentPage, pageSize) {
   const firstSystemData = async (param) => {
-    const { data, count } = await rp({ url: 'domainA.com', qs: param });
-    // your logic 
-    return { data, count }
+    return await rp({ url: 'domainA.com/getData', qs: param });
+  }
+  const firstSystemDataCount = async (param) => {
+    return await rp({ url: 'domainA.com/getCount', qs: param });
   }
 
   const secondSystemData = async (param) => {
-    const { data, count } = await rp({ url: 'domainA.com', qs: param });
-    // your logic 
-    return { data, count }
+    return await rp({ url: 'domainB.com/getData', qs: param });
   }
 
-  PageSplicing.next(firstSystemData).next(secondSystemData);
-  
-  return await PageSplicing.run(currentPage, pageSize);
+  const secondSystemDataCount = async (param) => {
+    return await rp({ url: 'domainB.com/getCount', qs: param });
+  }    
+  const handler = (getData, getCount) => PageSplicing.utils.pagingLogic(getData, getCount);
+  PageSplicing
+    .next(handler(firstSystemData, firstSystemDataCount))
+    .next(handler(secondSystemData, secondSystemDataCount));
+  return await PageSplicing.start(currentPage, pageSize);
 }
 
 const data = await getData(1, 10);
