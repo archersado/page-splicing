@@ -1,0 +1,39 @@
+{
+  "name": "page-splicing",
+  "version": "1.0.0",
+  "description": "Splicing data in different backend system, a common problem in BFF layer.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json -w",
+    "lint": "tslint --project . -c tslint.json --fix",
+    "precommit": "npm run build && git add .",
+    "test": "npm run build && jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/archersado/page-splicing.git"
+  },
+  "keywords": [
+    "bff",
+    "paging",
+    "page-splice"
+  ],
+  "author": "archersado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/archersado/page-splicing/issues"
+  },
+  "homepage": "https://github.com/archersado/page-splicing#readme",
+  "dependencies": {
+    "is-type-of": "^1.2.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.1",
+    "tslint": "^6.0.0",
+    "tslint-config-airbnb": "^5.11.2",
+    "typescript": "^3.8.3"
+  }
+}

@@ -1,0 +1,16 @@
+app/**/*.js
+test/**/*.js
+config/**/*.js
+*.map
+/node_modules
+coverage/
+*.log
+.logs/
+logs/
+*.swp
+run/
+*-run/
+.idea/
+.vscode/
+.DS_Store
+.node-diamond-client-cache
