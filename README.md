@@ -14,6 +14,8 @@ $ npm install page-splicing
 ## How to use
 
 tips: the interface to get data from backend should support search by offset(related to primary key or index)
+
+
 获取后端数据的接口需要支持偏移量查询(这个偏移量可以被计算为主键或数据索引)
 
 ```typescript
