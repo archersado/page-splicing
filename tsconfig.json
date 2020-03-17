@@ -21,7 +21,8 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "inlineSourceMap": true,
-    "inlineSources": true
+    "inlineSources": true,
+    "declaration": true
   },
   "exclude": [
     "node_modules*",

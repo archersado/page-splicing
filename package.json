@@ -2,13 +2,14 @@
   "name": "page-splicing",
   "version": "1.0.0",
   "description": "Splicing data in different backend system, a common problem in BFF layer.",
-  "main": "index.js",
+  "main": "./lib/index",
+  "type": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "watch": "tsc -p tsconfig.json -w",
     "lint": "tslint --project . -c tslint.json --fix",
-    "precommit": "npm run lint && npm run test && git add .",
-    "test": "npm run build && jest --coverage"
+    "test": "npm run build && jest --coverage",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,6 @@
   },
   "devDependencies": {
     "@types/jest": "^25.1.4",
-    "husky": "^4.2.3",
     "jest": "^25.1.0",
     "ts-jest": "^25.2.1",
     "tslint": "^6.0.0",
