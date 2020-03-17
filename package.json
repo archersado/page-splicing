@@ -1,6 +1,6 @@
 {
   "name": "page-splicing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Splicing data in different backend system, a common problem in BFF layer.",
   "main": "./lib/index",
   "type": "./lib/index.d.ts",
