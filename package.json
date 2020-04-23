@@ -1,6 +1,6 @@
 {
   "name": "page-splicing",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Splicing data in different backend system, a common problem in BFF layer.",
   "main": "./lib/index",
   "type": "./lib/index.d.ts",
@@ -19,6 +19,17 @@
     "bff",
     "paging",
     "page-splice"
+  ],
+  "files": [
+    "lib/",
+    "src/",
+    "test/",
+    "HISTORY.md",
+    "README.md",
+    "tsconfig.json",
+    "tsconfig.eslint.json",
+    "tslint.json",
+    "jest.config.js"
   ],
   "author": "archersado",
   "license": "ISC",
