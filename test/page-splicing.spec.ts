@@ -1,7 +1,8 @@
 import PageSplicing from '../src/index';
 
+const ps = new PageSplicing();
 beforeAll(async () => {
-  PageSplicing.emptyChain();
+  ps.emptyChain();
 })
 const getDataMock = data => {
   return async (param) => new Promise(resolve => {
@@ -24,13 +25,13 @@ test("base page splicing", async () => {
     const count = item;
     const getData = getDataMock(data);
     const getCount = getDataMock(count);
-    const handler = PageSplicing.utils.pagingLogic(getData, getCount);
-    PageSplicing.next(handler)
+    const handler = ps.utils.pagingLogic(getData, getCount);
+    ps.next(handler)
   };
-  const tc1 = await PageSplicing.start(1,5);
+  const tc1 = await ps.start(1,5);
 
   expect(tc1).toEqual([2,2,3,3,3]);
-  const tc2 = await PageSplicing.start(5,10);
+  const tc2 = await ps.start(5,10);
   expect(tc2).toEqual([3,4,4,4,4,5,5,5,5,5]);
 });
 

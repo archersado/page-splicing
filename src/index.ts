@@ -1,7 +1,7 @@
 import DutyChain from './dutyChain';
 import { pagingLogic } from './utils';
 
-export class PageSplicing {
+class PageSplicing {
   private dutyChains: DutyChain[] = [];
   constructor() {
     this.dutyChains = [];
@@ -51,4 +51,4 @@ export class PageSplicing {
   }
 }
 
-export default new PageSplicing();
+export default PageSplicing;
