@@ -45,7 +45,8 @@ class PageSplicing {
 
   public async start(pageIndex, pageSize) {
     if (!this.tail) throw new Error('duty chain is empty!');
-    const ret = await this.tail.handleRequest(pageIndex, pageSize);
+    const offset = (pageIndex - 1) * pageSize;
+    const ret = await this.tail.handleRequest(offset, pageSize);
 
     return ret
   }
